@@ -1,0 +1,31 @@
+# Sensitive configuration and environment variables
+.env
+.env.*
+!.env.example
+
+# Security Keys and Certificates
+*.pem
+*.cer
+*.crt
+*.key
+*.pfx
+*.p12
+
+# Local Configuration Overrides
+*local*.js
+*local*.json
+*local*.yaml
+*local*.yml
+config.local.*
+
+# Secrets and Credentials
+secrets.json
+credentials.json
+auth.json
+client_secret.json
+
+# IDE and OS specific files that might leak local paths/settings
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
