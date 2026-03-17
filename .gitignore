@@ -1,31 +1,110 @@
-# Sensitive configuration and environment variables
+# =============================================================
+# .gitignore — Sensitive & Local Configuration Files
+# See SECURITY.md for full documentation on what to exclude.
+# =============================================================
+
+
+# ─── Environment Variables ────────────────────────────────────
 .env
 .env.*
-!.env.example
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+!.env.example          # Allow example/template env file
 
-# Security Keys and Certificates
-*.pem
-*.cer
-*.crt
-*.key
-*.pfx
-*.p12
 
-# Local Configuration Overrides
-*local*.js
-*local*.json
-*local*.yaml
-*local*.yml
-config.local.*
-
-# Secrets and Credentials
+# ─── API Keys & Secrets ───────────────────────────────────────
 secrets.json
-credentials.json
-auth.json
-client_secret.json
+secrets.yaml
+secrets.yml
+api_keys.txt
+api_keys.json
+*.secret
 
-# IDE and OS specific files that might leak local paths/settings
-.vscode/
+
+# ─── Private Keys & Certificates ─────────────────────────────
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+*.ppk
+
+
+# ─── Cloud Provider Credentials ───────────────────────────────
+# AWS
+.aws/credentials
+.aws/config
+
+# Google Cloud
+credentials.json
+service_account.json
+*-service-account.json
+application_default_credentials.json
+
+# Azure
+azure.json
+.azure/
+
+
+# ─── Database Configuration ───────────────────────────────────
+database.yml
+database.env
+db_config.*
+*.db
+*.sqlite
+*.sqlite3
+
+
+# ─── Password & Auth Files ────────────────────────────────────
+.htpasswd
+.netrc
+auth.json
+token.json
+oauth_token*
+
+
+# ─── Local IDE & Editor Settings ─────────────────────────────
+.vscode/settings.json
 .idea/
+*.suo
+*.user
 .DS_Store
 Thumbs.db
+
+
+# ─── Build & Dependency Artifacts ────────────────────────────
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+dist/
+build/
+*.egg-info/
+.venv/
+venv/
+env/
+
+
+# ─── Log Files ────────────────────────────────────────────────
+*.log
+logs/
+npm-debug.log*
+yarn-error.log*
+
+
+# ─── Temporary & OS Files ─────────────────────────────────────
+*.tmp
+*.bak
+*.swp
+*~
+.DS_Store
+desktop.ini
